@@ -1,4 +1,4 @@
-# 练习1： Hello World
+# 练习： Hello World
 
 编写一个 JavaScript 文件，命名为 hello_world.js
 
