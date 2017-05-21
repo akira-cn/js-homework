@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+		<script type="text/javascript">
+
+		  let str = window.prompt('please input');
+		  var total = 0;
+		  var is_legal = 1;
+		  let i = 0;
+
+		  for (; ; ) {
+
+		  	if(str.length === 0)
+		  	{
+		  		alert("You must end the string with 0");
+				is_legal = 0;
+		  		break;
+		  	}
+
+		  	while(str[i] === ' ')
+		  	{
+		  		i++;
+		  	}
+		  	str = str.slice(i); 
+
+		  	let num = parseFloat(str);
+		  	if(num === 0)
+		  	{
+		  		break;
+		  	}
+
+		  	total += num;
+
+		  	i = num.toString().length + 1;
+		  };
+
+		  if(is_legal === 1)
+		  {
+		  	alert(total);	  
+		  }
+		  
+		</script>
+    </head>
+    <body>
+
+    </body>
+</html>
