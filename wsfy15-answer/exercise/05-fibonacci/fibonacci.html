@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <script type="text/javascript">
+        	function fibonacci(n) 
+        	{
+        		if(n <= 2)
+        		{
+        			return 1;
+        		}
+        		var array = new Array(n);
+        		array[0] = 1;
+        		array[1] = 1;
+        		for(let i=2;i<n;i++)
+        		{
+        			array[i] = array[i-1] + array[i-2];
+        		}
+        		return array[n-1];
+        	}
+        	var num = window.prompt('input a number')
+        	alert(fibonacci(num))
+        </script>
+    </head>
+    <body>
+    </body>
+</html>
