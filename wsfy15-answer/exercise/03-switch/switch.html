@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <script type="text/javascript">
+      	  	var str = window.prompt('please input');
+      	  	
+      	  	if(isNaN(str))
+      	  	{
+      	  		alert('is not a number')
+      	  	}
+      	  	else
+      	  	{
+      	  		let num = parseFloat(str);
+      	  		if(num%1 > 0)
+      	  		{
+      	  			alert('is a float number, not a integer')
+      	  		}
+      	  		else
+      	  		{
+      	  			alert((parseInt(str) % 2 == 0) ? "even":"odd")
+      	  		}    	  		
+      	  	}
+      	  	
+        </script>
+    </head>
+    <body>
+    </body>
+</html>
