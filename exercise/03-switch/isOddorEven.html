@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>JS Bin</title>
+  <script>
+    function isOddOrEven() {
+      let number = prompt("请输入一个整数数", 0);
+      number = parseInt(number);
+      if (!isNaN(number)) {
+        console.log(number, typeof(number));
+        if (number % 2 === 0)
+          window.alert("是偶数!");
+        else
+          window.alert("是奇数!");
+      }else {
+          window.alert("不是合法的输入!")
+      }
+    }
+  </script>
+</head>
+
+<body>
+  <button id="btn_confirm" onClick="isOddOrEven()">判断</buttom>
+</body>
+</html>
