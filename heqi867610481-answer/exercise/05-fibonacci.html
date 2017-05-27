@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<head>
+		<meta charset="UTF-8">
+<script src="http://apps.bdimg.com/libs/jquery/2.1.1/jquery.min.js"></script>
+<script type="text/javascript">
+function disp_prompt()
+  {
+	var num=prompt("Please enter a number.","");
+	  if (num!=null)
+	    {
+	    	$("body").append("<p>"+fib(num)+"</p>");
+	    }
+  }
+
+function fib(n){
+    if(n==1||n==2){
+        return 1;
+    }
+    return fib(n-1)+fib(n-2);
+}
+</script>
+</head>
+<body>
+
+<input type="button" onclick="disp_prompt()"
+value="Display a prompt box" />
+
+</body>
+</html>

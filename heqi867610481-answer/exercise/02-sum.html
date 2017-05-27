@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<head>
+<script type="text/javascript">
+function disp_prompt()
+  {
+	var num=prompt("Please enter some numbers. 0 means stopping to sum.","");
+	var arr=num.split(" ");
+	  if (num!=null && arr[arr.length-1]=="0")
+	    {
+	    	var ans=0;
+	    	for (var i=0 ; i<arr.length ; i++){
+	            ans=ans+parseInt(arr[i]);
+	    	}
+	        document.write("answer: " + ans);
+	    }
+  }
+</script>
+</head>
+<body>
+
+<input type="button" onclick="disp_prompt()"
+value="Display a prompt box" />
+
+</body>
+</html>

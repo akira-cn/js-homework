@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<head>
+	<meta charset="UTF-8">
+	<script src="http://apps.bdimg.com/libs/jquery/2.1.1/jquery.min.js"></script>
+	<script type="text/javascript">
+	function disp_prompt()
+	  {
+		var num=prompt("Please enter something.","");
+		  if (num!=null)
+		    {
+		    	var a=parseInt(num);
+	        	if (a%2==0){
+	        		$(".aaa").append("<p>even</p>");
+	        	}
+	        	else if (a%2==1){
+	        		$(".aaa").append("<p>odd</p>");
+	        	}
+	        	else{
+	        		$(".aaa").append("<p>not</p>");
+	        	}
+		    }
+	  }
+	</script>
+</head>
+<body>
+
+<input type="button" onclick="disp_prompt()"
+value="Display a prompt box" />
+<div class="aaa">
+</div>
+
+</body>
+</html>
