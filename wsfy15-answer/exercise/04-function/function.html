@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <script type="text/javascript">
+        	(function foo(){
+        		var str = window.prompt('please input')
+        		var min = Infinity;
+        		let len = str.length;
+
+        		for(let i = 0;i < len;  i++)
+        		{
+        			let num = 0;
+        			let is_negative = 0;
+        			while(str[i] === ' ')
+				  	{
+				  		i++;
+				  	}
+
+				  	if(str[i] === '-')
+				  	{
+				  		is_negative = 1;
+				  		i++;
+				  	}
+
+				  	while(str[i] != ' ' && i < len)
+				  	{
+
+				  		let n = parseFloat(str[i]);
+				  		i++;
+				  		num = num*10 + n;
+				  	}	
+
+				  	if(is_negative === 1)
+				  	{
+				  		num = -num;
+				  	}			  
+
+				  	if(num < min)
+				  	{
+				  		min = num;
+				  	}
+        		}
+        		alert(min)
+        	})();
+        </script>
+    </head>
+    <body>
+    </body>
+</html>
