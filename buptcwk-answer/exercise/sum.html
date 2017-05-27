@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title></title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="css/style.css" rel="stylesheet">
+</head>
+
+<body>
+    <script>
+        var sum = 0;
+        let fun = function() {
+            var data = prompt("请输入数字", 0);
+
+            data = parseInt(data);
+            if (data !== 0) {
+                sum += data;
+            }
+            if (data === 0) {
+                window.alert(sum)
+                sum = 0;
+            }
+        }
+    </script>
+</body>
+<button id="input" onclick="fun()">输入</button>
+
+</html>
