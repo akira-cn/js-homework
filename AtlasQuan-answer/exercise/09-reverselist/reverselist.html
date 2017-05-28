@@ -1,0 +1,19 @@
+<ul>
+  <li>张三</li>
+  <li>李四</li>
+  <li>王五</li>
+  <li>赵六</li>
+</ul>
+<script>
+	var lis = document.getElementsByTagName('li');
+	var len = lis.length;
+	for(var i = 0;i<len/2;i++){
+		var temp = lis[i].innerHTML;
+		document.getElementsByTagName('li')[i].innerHTML =  document.getElementsByTagName('li')[len-i-1].innerHTML;
+		document.getElementsByTagName('li')[len-i-1].innerHTML = temp;
+	}
+	console.log(lis[0].innerHTML);
+	console.log(lis[1].innerHTML);
+	console.log(lis[2].innerHTML);
+	console.log(lis[3].innerHTML);
+</script>
