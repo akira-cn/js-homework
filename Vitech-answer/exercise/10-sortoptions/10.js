@@ -1,0 +1,24 @@
+//----------------------------------\
+//  Vitech(2015212149)的 js作业      |
+//  https://github.com/liuzirui1122 |
+//----------------------------------/
+//
+var sortSelect = function(el,order) {
+    function sortOrder(a,b) {
+        if (order) return a>b;
+        return a<b;
+    }
+    //假设el为select
+    var op = el.getElementsByTagName("option");
+    var country = [];
+    for (var i=0;i<op.length;i++) 
+        country.push(op[i].innerHTML);
+    el.innerHTML = "";
+    country.sort(sortOrder);
+    for (var i=0;i<country.length;i++) {
+        var opnew = document.createElement("option");
+        opnew.innerHTML = country[i];
+        el.appendChild(opnew);
+    }
+}
+
