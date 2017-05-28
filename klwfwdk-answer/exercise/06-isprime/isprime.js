@@ -6,11 +6,10 @@ function isPrime(n) {
         if (n % i === 0) {
             return false;
         }
-
     }
     return true;
 }
-
 for (var i = 1; i < 10; i++) {
+
     console.log(isPrime(i));
 }
