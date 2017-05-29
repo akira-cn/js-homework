@@ -1,17 +1,8 @@
-const btn = document.querySelector('button');
-const list = document.querySelector('ul');
-const items = list.getElementsByTagName('li');
-
-btn.addEventListener('click', evt => {
-    let item = document.createElement('li');
-
-    item.innerHTML = `${items.length + 1}`;
-    list.appendChild(item);
-});
-
-Array.from(items).forEach(item => {
-    item.addEventListener('click', evt => {
-        evt.target.className = evt.target.className ?
-            '' : 'selected';
-    });
-});
+function reverseList(el) {
+    var el1 = document.getElementById(el);
+    var li = el1.getElementsByTagName('li');
+    var n = li.length;
+    for (var i = n - 1; n > -1; i--) {
+        el1.appendChild(li[i]);
+    }
+}

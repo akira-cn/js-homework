@@ -14,8 +14,8 @@
   <option>China</option>
 </select>
 
-<button>A-Z</button><!--升序排列-->
-<button>Z-A</button><!--降序排列-->
+<button id="AZ">A-Z</button><!--升序排列-->
+<button id="ZA">Z-A</button><!--降序排列-->
 ```
 
 要求实现点击按钮 A-Z，让选项按字母 A-Z 顺序排列，点击按钮 Z-A，让选项安字母 Z-A 顺序排列。
