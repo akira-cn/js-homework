@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title></title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="css/style.css" rel="stylesheet">
+    <script>
+        let fun = function() {
+            var data = prompt("请输入一段文字", "");
+            data = parseInt(data);
+            if (isNaN(data))
+                window.alert("不是整数")
+
+            else {
+                if (data % 2 === 0)
+                    window.alert("偶数")
+
+                else
+                    window.alert("奇数")
+            }
+
+        }
+    </script>
+</head>
+
+<body>
+    <input type="button" onclick=fun() value="输入">
+</body>
+
+</html>
