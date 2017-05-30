@@ -1,0 +1,48 @@
+const upbut = document.getElementById('up');//获取两个按钮
+const downbut = document.getElementById('down');
+
+var list = Array.from(document.getElementsByTagName('option'));//获取列表
+
+var newlist = [];//保存新的列表
+
+function getnewlist(){//获取未排序列表
+    for (let i = 0;i < list.length;i++){
+        newlist[i] = document.createElement('option');
+        newlist[i].textContent = list[i].textContent;
+    }
+}
+
+function sort_list(up_or_down){
+    getnewlist();
+    let temp = document.createElement('option');//中间变量
+    for (let i = 0;i < newlist.length;i++){//冒泡排序法
+        for (let j = 1;j < newlist.length;j++){
+            if (up_or_down == 1){//up
+                if (newlist[j].textContent < newlist[j - 1].textContent){
+                    temp.textContent = newlist[j].textContent;
+                    newlist[j].textContent = newlist[j - 1].textContent;
+                    newlist[j - 1].textContent = temp.textContent;
+                }
+            }
+            else if (up_or_down == -1){//down
+                if (newlist[j].textContent > newlist[j - 1].textContent){
+                    temp.textContent = newlist[j].textContent;
+                    newlist[j].textContent = newlist[j - 1].textContent;
+                    newlist[j - 1].textContent = temp.textContent;
+                }
+            }
+        }
+    }
+    for (let i = 0;i < list.length;i++){
+        list[i].textContent = newlist[i].textContent;//赋值给原本的列表
+    }
+    newlist.forEach(el=>el.remove());
+}
+
+upbut.addEventListener('click',evt=>{
+    sort_list(1);
+});
+
+downbut.addEventListener('click',evt=>{
+    sort_list(-1);
+});
