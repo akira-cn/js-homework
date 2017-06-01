@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <select id="select">
+        <option>American</option>
+        <option>England</option>
+        <option>Germany</option>
+        <option>France</option>
+        <option>Spain</option>
+        <option>Japan</option>
+        <option>Korea</option>
+        <option>China</option>
+    </select>
+
+    <button id="asc">A-Z</button><!--升序排列-->
+    <button id="des">Z-A</button><!--降序排列-->
+
+    <script>
+        const hcSelects = document.querySelectorAll("#select option");
+        const oSelect = document.querySelector("#select");
+        const oAscBtn = document.querySelector("#asc");
+        const oDesBtn = document.querySelector("#des");
+        let arraySelects = Array.prototype.slice.call(hcSelects,0);
+
+        oAscBtn.addEventListener('click',fnAsc,false);
+        oDesBtn.addEventListener('click',fnDes,false);
+
+        // 降序排列
+        function fnDes(){
+            let sortedArray = arraySelects.sort((a,b) => b.innerText.localeCompare(a.innerText));
+            replaceElements(oSelect,sortedArray);
+        }
+
+        // 升序排列
+        function fnAsc(){
+            let sortedArray = arraySelects.sort((a,b) => a.innerText.localeCompare(b.innerText));
+            replaceElements(oSelect,sortedArray);
+        }
+        
+        /**
+         * @input ele 要被替换子元素的元素
+         * @input elements 子元素数组
+         */
+        function replaceElements(ele, elements){
+            ele.innerHTML = '';
+            for(let i=0;i<elements.length;i++){
+                ele.appendChild(elements[i]);
+            }
+        }
+    </script>
+</body>
+</html>
