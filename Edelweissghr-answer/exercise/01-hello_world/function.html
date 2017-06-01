@@ -1,0 +1,26 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+</head>
+<body>
+<script>
+    var a, b, i;
+    function min(a,b)
+    {
+        return a > b ? b : a;
+    }
+    var nums = new Array();
+    for (i = 0; ; i++)
+    {
+        nums[i] = parseInt(prompt("Input the number:", nums), "");
+        if (nums[i] == 0) break;
+        else if (i > 0)
+            nums[i] = min(nums[i - 1], nums[i]);
+    }
+    document.write(nums[i - 1]);
+</script>
+</body>
+</html>
