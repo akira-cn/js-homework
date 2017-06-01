@@ -1,5 +1,15 @@
+
 # 练习：求最小值
 
 实现一个函数，输入一组数值参数（任意个数），返回值最小的结果
 
 注意：要求自己实现，不使用 `Math.min`
+
+function min(...args){
+    var minValue=Infinity;
+    for(var i=0;i<args.length;i++){
+        if(minValue>args[i])
+        minValue>args[i]
+    }
+return minValue;
+}
