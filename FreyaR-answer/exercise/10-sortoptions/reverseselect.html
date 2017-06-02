@@ -1,0 +1,49 @@
+<<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<meta charset="UTF-8">
+	<script type="text/javascript">
+		function up(){
+			var d=document.getElementById("country");
+	        var a=new Array();
+	        console.log(d.length);
+	        for (var i = 0; i<d.length; i++) {
+		         a[i]=d[i].innerHTML;
+	        }
+	        a.sort();
+	        for (var i = 0; i < d.length; i++) {
+		    d[i].innerHTML=a[i];
+	        }
+    }
+		function down(){
+			var d=document.getElementById("country");
+	        var a=new Array();
+	         console.log(d.length);
+	        for (var i = 0; i < d.length; i++) {
+		    a[i]=d[i].innerHTML;
+	        };
+	        a.sort();
+	        for (var i = 0; i < d.length; i++) {
+		    d[i].innerHTML=a[d.length-i-1];
+	        };
+	}
+
+	</script>
+</head>
+<body>
+    <select id="country">
+    <option>American</option>
+    <option>England</option>
+    <option>Germany</option>
+    <option>France</option>
+    <option>Spain</option>
+    <option>Japan</option>
+    <option>Korea</option>
+    <option>China</option>
+    </select>
+
+    <button onclick="up()">A-Z</button><!--升序排列-->
+    <button onclick="down()">Z-A</button><!--降序排列-->
+</body>
+</html>
