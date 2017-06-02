@@ -1,0 +1,17 @@
+function getSecondn(a){
+  var max1 = a[0];
+  for(var i = 1; i<a.length; i++){
+    if (a[i]>max1){
+      max1 = a[i];
+    }
+  }
+  var max2 = a[1];
+  for(i = 2; i<a.length; i++){
+    if(a[i]>max2 && a[i]!=max1){
+      max2 = a[i];
+    }
+  }
+  return max2;
+}
+var arr = [3, 5 , 9 , 10 ,28, 0 ,1 ];
+console.log(getSecondn(arr));
