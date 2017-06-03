@@ -1,0 +1,52 @@
+<select>
+  <option>American</option>
+  <option>England</option>
+  <option>Germany</option>
+  <option>France</option>
+  <option>Spain</option>
+  <option>Japan</option>
+  <option>Korea</option>
+  <option>China</option>
+</select>
+
+<button onclick="az()">A-Z</button><!--升序排列-->
+<button onclick="za()">Z-A</button><!--降序排列-->
+
+<script>
+    function az() {
+        var s = document.getElementsByTagName("select")[0];
+        var opts = document.getElementsByTagName("option");
+        var l = opts.length;
+        var arr = [];
+        for (var i=0; i<l; i++) {
+            arr[i] = opts[i].innerText;
+        }
+        for (var i=0; i<l; i++) {
+            s.removeChild(opts[0]);
+        }
+        arr.sort();
+        for (var i=0; i<l; i++) {
+            var opt = document.createElement("option");
+            opt.innerText = arr[i];
+            s.appendChild(opt);
+        }
+    }
+    function za() {
+        var s = document.getElementsByTagName("select")[0];
+        var opts = document.getElementsByTagName("option");
+        var l = opts.length;
+        var arr = [];
+        for (var i=0; i<l; i++) {
+            arr[i] = opts[i].innerText;
+        }
+        for (var i=0; i<l; i++) {
+            s.removeChild(opts[0]);
+        }
+        arr.sort();
+        for (var i=0; i<l; i++) {
+            var opt = document.createElement("option");
+            opt.innerText = arr[i];
+            s.insertBefore(opt, s.childNodes[0]);
+        }
+    }
+</script>
