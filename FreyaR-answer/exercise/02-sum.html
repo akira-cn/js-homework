@@ -1,0 +1,25 @@
+<<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+	<title>sum</title>
+	<script type="text/javascript">
+		var tempsum=0;
+		function sum(){
+			let data = prompt("请输入一个整数",0);
+			data=parseInt(data);
+			if (data) {
+				tempsum=tempsum+data;
+				console.log(tempsum);
+			    }
+			if (data==0) {
+				window.alert("和为"+tempsum);
+				tempsum=0;
+			}
+		}
+	</script>
+</head>
+<body>
+     <button id="input" onclick="sum()">输入</button>
+</body>
+</html>
