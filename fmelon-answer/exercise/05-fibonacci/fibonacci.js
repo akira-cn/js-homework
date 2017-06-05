@@ -12,7 +12,6 @@ function fibonacci(n ){
     alert("求得的fibonacci数值为："+b);
     }
 }
-
 var num = prompt("请输入一个大于等于1的数");
 if(parseInt(num) >= 1 ){
     fibonacci(num);
