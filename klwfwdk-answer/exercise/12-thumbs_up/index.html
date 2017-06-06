@@ -1,30 +1,58 @@
-<style>
-    #list a {
-        text-decoration: none;
-    }
-    
-    .thumbs_up:after {
-        content: '[点赞]';
-        margin-right: 10px;
-    }
-</style>
-<ul id="list">
-    <li>
-        <a href="###" class="thumbs_up"></a>主题1</li>
-    <li>
-        <a href="###" class="thumbs_up"></a>主题2</li>
-    <li>
-        <a href="###" class="thumbs_up"></a>主题3</li>
-    <li>
-        <a href="###" class="thumbs_up"></a>主题4</li>
-    <li>
-        <a href="###" class="thumbs_up"></a>主题5</li>
-    <li>
-        <a href="###" class="thumbs_up"></a>主题6</li>
-    <li>
-        <a href="###" class="thumbs_up"></a>主题7</li>
-    <li>
-        <a href="###" class="thumbs_up"></a>主题8</li>
-    <li>
-        <a href="###" class="thumbs_up"></a>主题9</li>
-</ul>
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+    <title></title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <style>
+        #list a {
+            text-decoration: none;
+        }
+        
+        .thumbs_up:after {
+            content: '[点赞]';
+            margin-right: 10px;
+        }
+        
+        .thumbs_up.chicked:after {
+            content: '[已赞]';
+            margin-right: 10px;
+        }
+        
+        .thumbs_up.chicked {
+            pointer-events: none;
+            cursor: default
+        }
+    </style>
+</head>
+
+<body>
+    <ul id="list">
+        <li>
+            <a href="###" class="thumbs_up"></a>主题1</li>
+        <li>
+            <a href="###" class="thumbs_up"></a>主题2</li>
+        <li>
+            <a href="###" class="thumbs_up"></a>主题3</li>
+        <li>
+            <a href="###" class="thumbs_up"></a>主题4</li>
+        <li>
+            <a href="###" class="thumbs_up"></a>主题5</li>
+        <li>
+            <a href="###" class="thumbs_up"></a>主题6</li>
+        <li>
+            <a href="###" class="thumbs_up"></a>主题7</li>
+        <li>
+            <a href="###" class="thumbs_up"></a>主题8</li>
+        <li>
+            <a href="###" class="thumbs_up"></a>主题9</li>
+    </ul>
+    <button id="removeStorage">清除</button>
+
+</body>
+<script src="thumbs_up.js"></script>
+
+</html>
