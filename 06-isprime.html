@@ -1,0 +1,37 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+</head>
+<body>
+    <script>
+        let n;
+        n = parseInt(prompt("Input n:", n), "");
+        let judge = 1;
+        function isPrime(n)
+        {
+            if ((0 | n == n) && (n >= 2))
+            {
+                for (let i = 2; i <= parseInt(n / 2); i++)
+                {
+                    if (n % i == 0)
+                    {
+                        document.write("是合数！");
+                        judge = 0;
+                        break;
+                    }
+                }
+                if (judge)
+                    document.write("是素数！");
+            }
+            else if (n == 1)
+                document.write("既不是素数又不是合数！");
+            else
+                document.write("输入不是正整数！");
+        }
+        isPrime(n);
+    </script>
+</body>
+</html>
