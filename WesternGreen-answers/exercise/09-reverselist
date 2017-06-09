@@ -1,0 +1,18 @@
+let list = [];//保存原始列表
+
+list = Array.from(document.getElementsByTagName('li'));//获取原始列表
+
+list = reverseList(list);
+function reverseList(el){
+    let newlist = [];//保存倒序的新列表
+    if (el.length){//列表长度不为0时
+        for (let i = 0;i < el.length;i++){//遍历列表
+            newlist[i] = document.createElement("li");//新建元素
+            newlist[i].textContent = el[el.length - i - 1].textContent;//倒序处理
+        }
+        for (let i = 0;i < el.length;i++){
+            el[i].textContent = newlist[i].textContent;
+        }
+    }
+  return el;//返回倒序的列表
+}

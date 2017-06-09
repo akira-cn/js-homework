@@ -1,0 +1,20 @@
+<<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+	<title>findmin</title>
+	<script type="text/javascript">
+		function findmin(...a){
+			 let min = a[0];
+             for (e of a){
+             if (e < min)
+               min = e;
+    }
+     window.alert("最小值是"+min);
+		}
+	</script>
+</head>
+<body>
+   <button id="btn_confirm" onClick="findmin(1,2,3,4,5,6)">最小值</button>
+</body>
+</html>

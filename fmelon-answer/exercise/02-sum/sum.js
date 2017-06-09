@@ -6,4 +6,5 @@ while(a!==0){
     num = prompt("请输入数值：(输入0结束输入并求和)","0");
     a = parseInt(num);
 }
+
 alert("求和结果是 "+ sum );
