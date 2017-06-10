@@ -1,0 +1,36 @@
+<!doctype html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>thumb_up</title>
+    </head>
+    <body>
+        <style>
+         #list a {
+             text-decoration:none;
+         }
+         .thumbs_up:after {
+             content: '[点赞]';
+             margin-right: 10px;
+         }
+         .thumbs_up--selected:after{
+         content: '[已赞]';
+         font-style:italic;
+         color:red;
+         margin-right: 10px;
+         }
+        </style>
+        <ul id="list">
+            <li><a href="###" class="thumbs_up"></a>主题1</li>
+            <li><a href="###" class="thumbs_up"></a>主题2</li>
+            <li><a href="###" class="thumbs_up"></a>主题3</li>
+            <li><a href="###" class="thumbs_up"></a>主题4</li>
+            <li><a href="###" class="thumbs_up"></a>主题5</li>
+            <li><a href="###" class="thumbs_up"></a>主题6</li>
+            <li><a href="###" class="thumbs_up"></a>主题7</li>
+            <li><a href="###" class="thumbs_up"></a>主题8</li>
+            <li><a href="###" class="thumbs_up"></a>主题9</li>
+        </ul>
+        <script type="text/javascript" src="./thumbs_up.js"></script>
+    </body>
+</html>
