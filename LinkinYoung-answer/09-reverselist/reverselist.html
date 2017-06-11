@@ -1,0 +1,22 @@
+<ul>
+  <li>张三</li>
+  <li>李四</li>
+  <li>王五</li>
+  <li>赵六</li>
+</ul>
+
+<button onclick="reverselist()">reverseList</button>
+
+<script>
+function reverselist() {
+    var l = document.getElementsByTagName("li");
+    var u = document.getElementsByTagName("ul")[0];
+    var i = l.length;
+    var q = document.createElement("ul");
+    for (i--; i >= 0; i--) {
+        q.appendChild(l[i]);
+    }
+    document.body.insertBefore(q, u);
+    u.remove();
+}
+</script>

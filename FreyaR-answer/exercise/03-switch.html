@@ -1,0 +1,25 @@
+<<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+	<title>inputtype</title>
+	<script type="text/javascript">
+		function inputtype() {
+			let data =prompt("请在此输入数据",0);
+			data = parseInt(data)
+			if (!isNaN(data)) {
+				if(data % 2)
+					window.alert("奇数");
+				else
+					window.alert("偶数");
+
+			}else
+			    window.alert("不是整数");
+			// body...
+		}
+	</script>
+</head>
+<body>
+    <button id="btn_confirm" onClick="inputtype()">判断</button>
+</body>
+</html>

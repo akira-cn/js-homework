@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+
+    <ul id="list">
+        <li>张三</li>
+        <li>李四</li>
+        <li>王五</li>
+        <li>赵六</li>
+    </ul>
+    
+    <script>
+        const listNodes = document.querySelectorAll("#list li");
+        const oList = document.querySelector("#list");
+
+        oList.innerHTML = '';
+        for(let i = listNodes.length-1;i>=0;i--){
+            oList.appendChild(listNodes[i])
+        }
+
+        console.assert(document.querySelectorAll('#list li')[0].innerText == '赵六', '元素反转失败！');
+    </script>
+</body>
+</html>

@@ -1,0 +1,18 @@
+function isPrime(n){
+    if (n <= 1)
+        return false;
+    else{//n大于1
+        let flag = 1;//判断是否为素数。默认为是
+        for (let num = 2;num < n;num++){
+            if (n % num === 0){//如果存在整除
+                flag = 0;
+                break;
+            }
+        }
+        return flag;
+    }
+}
+
+var n;
+n = parseInt(prompt("请输入一个自然数"));
+console.log(Boolean(isPrime(n)));

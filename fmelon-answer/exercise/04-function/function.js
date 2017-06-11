@@ -7,7 +7,6 @@ function getmin(){
     return min;
     }
 }
-
 var input = 0;
 var num = 0;
 var a = [];
