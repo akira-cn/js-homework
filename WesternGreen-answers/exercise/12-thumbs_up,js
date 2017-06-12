@@ -1,0 +1,51 @@
+var ul = document.getElementById('list');
+var li = Array.from(document.getElementsByTagName('li'));
+
+var localkey = 'ischecked';
+
+var checked = new Array(li.length);//记录哪些被点击
+
+ul.addEventListener('click',evt=>{
+    let el = evt.target;
+    if (el.tagName === 'A'){
+        change_color(el);
+        get_is_checked();
+        save_checked();
+    }
+})
+
+function get_is_checked(){//更改checked的值
+    for (let i = 0;i < li.length;i++){
+        if (li[i].firstChild.className == 'checked'){
+            checked[i] = true;
+        }
+    }
+}
+
+function save_checked(){
+    localStorage.setItem(localkey,checked);
+}
+
+function change_color(el){
+    el.className = 'checked';
+    el.style.color = 'red';
+    el.textContent = '[已赞]';
+    el.style.fontStyle = 'italic';
+    el.style.cursor = 'default';
+    el.style.marginRight = '10px';
+}
+
+function log_in(){
+    let str = localStorage.getItem(localkey);
+    if (str == null){
+        return;
+    }
+    checked = Array.from(str.split(','));
+    for (let i = 0;i < li.length;i++){
+        if (checked[i] == 'true'){
+            change_color(li[i].firstChild);
+        }
+    }
+}
+
+log_in();
