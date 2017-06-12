@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+	<html lang="ch">
+<head>
+	<title>输入类型</title>
+	<meta charset = "UTF-8">
+	<script type="text/javascript">
+		var num; 
+    	num =prompt("请输入：");
+    	if(!isNaN(num)){//如果是数字
+    		if((num%2)==0){
+    			document.write("偶数");
+    		}
+     		else{
+     			document.write("奇数");
+     		}
+         }
+         else{
+       		document.write("不是数字");
+    	}
+	</script>
+</head>
+<body>
+
+</body>
+</html>

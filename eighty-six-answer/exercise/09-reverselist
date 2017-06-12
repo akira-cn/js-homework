@@ -1,0 +1,30 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta charset = "utf-8">
+<title>reverselist</title>
+</head>
+
+<body>
+<ul id="list">
+	<li>张三</li>
+	<li>李四</li>
+	<li>王五</li>
+	<li>赵六</li>
+</ul>
+<script language="javascript">
+	var lb=document.getElementById('list').getElementsByTagName('li');//查找到子元素
+	var s=[];//创建数组
+	for (var i=0, j=lb.length; i<j; i++){
+ 		var li=lb[i];
+ 		s.push(li);//把元素放入数组
+	}
+	s.reverse();//数组倒序
+	for(var i=0, j=s.length; i<j;i++){
+		s[i].parentNode.appendChild(s[i]);//重新给列表赋值输出
+	}
+
+</script>
+
+</body>
+</html>

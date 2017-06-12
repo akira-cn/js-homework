@@ -1,0 +1,12 @@
+function min(a){
+  minnum = a[0];
+  for(var i = 0; i<a.length; i++){
+    if(minnum > a[i]){
+      minnum = a[i];
+    }
+  }
+  return minnum;
+}
+
+var a = [2,3,6,9,5,45,21,0];
+console.log(min(a));

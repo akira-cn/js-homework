@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<html lang="ch">
+<head>
+	<title>求和</title>
+	<meta charset = "UTF-8">
+	<script type="text/javascript">
+		var sum = 0; 
+		var i = parseInt(prompt("请输入待求和的数字，以0结束",""));
+		while(i != 0){
+			sum = sum+i;
+			i = parseInt(prompt("请输入待求和的数字，以0结束",""));
+		}
+		document.write('和为'+sum);
+</script>
+</head>
+<body>
+
+
+
+</body>
+</html>

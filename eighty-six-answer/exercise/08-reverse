@@ -1,0 +1,10 @@
+function reverse(str){
+  var str2 = new Array(str.length);
+  for(var i = 0; i<str.length; i++){
+    str2[i] = str[str.length-i-1];
+  }
+  return str2;
+}
+
+var str = "123456789";
+console.log(reverse(str));
