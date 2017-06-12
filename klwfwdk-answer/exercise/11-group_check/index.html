@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title></title>
+    <meta charset="UTF-8">
+
+    <style>
+        body {
+            height: 1000px;
+        }
+        
+        #list {
+            margin: 0;
+            padding: 0;
+        }
+        
+        #list li {
+            list-style-type: none;
+        }
+        
+        #list a {
+            display: block;
+            text-decoration: none;
+        }
+        
+        #list a:hover {
+            background-color: rgba(0, 0, 0, 0.2);
+        }
+        
+        #list li.error a {
+            color: red;
+        }
+        
+        #list li.warning a {
+            color: orange;
+        }
+        
+        #list li.info a {
+            color: green;
+        }
+        
+        #list li.chicked a {
+            background-color: black;
+            color: white;
+        }
+    </style>
+</head>
+
+<body>
+    <ul id="list">
+        <li class="error"><a href="###">错误信息：error...</a></li>
+        <li class="warning"><a href="###">警告信息：error...</a></li>
+        <li class="info"><a href="###">提示信息：error...</a></li>
+        <li class="warning"><a href="###">警告信息：error...</a></li>
+        <li class="warning"><a href="###">警告信息：error...</a></li>
+        <li class="error"><a href="###">错误信息：error...</a></li>
+        <li class="error"><a href="###">错误信息：error...</a></li>
+        <li class="info"><a href="###">提示信息：error...</a></li>
+        <li class="error"><a href="###">错误信息：error...</a></li>
+    </ul>
+</body>
+<script src="group_check.js"></script>
+
+</html>
