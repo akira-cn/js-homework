@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>分组选中</title>
+        <meta charset="UTF-8">
+    </head>
+    <body id="main">
+        <style>
+            body {
+                height: 100vh;
+            }
+            #list {
+                margin: 0;
+                padding: 0;    
+            }
+            #list li {
+                list-style-type:none;
+            }
+            #list a {
+                display: block;
+                text-decoration: none;
+            }
+            #list a:hover {
+                background-color: rgba(0, 0, 0, 0.2);  
+            }
+            #list li.error a{
+                color: red;
+            }
+            #list li.warning a{
+                color: orange;
+            }
+            #list li.info a{
+                color: green;
+            }
+            #list li.selected {
+                background-color: black;
+            }
+            #list li.selected a{
+                color: white;
+            }
+        </style>
+        <ul id="list">
+            <li class="error"><a href="###">错误信息：error...</a></li>
+            <li class="warning"><a href="###">警告信息：error...</a></li>
+            <li class="info"><a href="###">提示信息：error...</a></li>
+            <li class="warning"><a href="###">警告信息：error...</a></li>
+            <li class="warning"><a href="###">警告信息：error...</a></li>
+            <li class="error"><a href="###">错误信息：error...</a></li>
+            <li class="error"><a href="###">错误信息：error...</a></li>
+            <li class="info"><a href="###">提示信息：error...</a></li>
+            <li class="error"><a href="###">错误信息：error...</a></li>
+        </ul> 
+        <script type="text/javascript" src="handle.js">      
+        </script>
+    </body>
+</html>
