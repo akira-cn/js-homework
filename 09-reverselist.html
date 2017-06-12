@@ -1,0 +1,28 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title>reverselist</title>
+</head>
+<body>
+    <ul id="reverselist">
+        <li>张三</li>
+        <li>李四</li>
+        <li>王五</li>
+        <li>赵六</li>
+    </ul>
+    <button onclick="reverseList()">click here</button>
+    <script type="text/javascript">
+        function reverseList()
+        {
+            var x = document.getElementById("reverselist");
+            var y = new Array();
+            for (let i = 0; i < x.childNodes.length; i++)
+                y[i] = x.childNodes[i].innerHTML;
+            for (let i = 0; i < x.childNodes.length; i++)
+                x.childNodes[i].innerHTML = y[y.length - 1 - i];
+        }
+    </script>
+</body>
+</html>
