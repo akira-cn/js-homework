@@ -1,0 +1,67 @@
+<style>
+  #list {
+    margin: 0;
+    padding: 0;    
+  }
+  #list li {
+    list-style-type:none;
+  }
+  #list a {
+    display: block;
+    text-decoration: none;
+  }
+  #list a:hover {
+    background-color: rgba(0, 0, 0, 0.2);  
+  }
+  #list li.error a{
+    color: red;
+  }
+  #list li.warning a{
+    color: orange;
+  }
+  #list li.info a{
+    color: green;
+  }
+  #list li.highlight {
+      color: white;
+      background-color: black;
+  }
+  #list li.highlight a {
+      color: white;
+  }
+</style>
+<ul id="list">
+  <li class="error"><a href="###">错误信息：error...</a></li>
+  <li class="warning"><a href="###">警告信息：error...</a></li>
+  <li class="info"><a href="###">提示信息：error...</a></li>
+  <li class="warning"><a href="###">警告信息：error...</a></li>
+  <li class="warning"><a href="###">警告信息：error...</a></li>
+  <li class="error"><a href="###">错误信息：error...</a></li>
+  <li class="error"><a href="###">错误信息：error...</a></li>
+  <li class="info"><a href="###">提示信息：error...</a></li>
+  <li class="error"><a href="###">错误信息：error...</a></li>
+</ul>
+
+<script>
+    var links = document.getElementsByTagName("a");
+    for (var i in links) {
+        links[i].onclick = (e) => {
+            classs = e.target.parentElement.className;
+            var sameClass = document.getElementsByClassName(classs);
+            for (var j in sameClass) {
+                if (j == "length") {
+                    break;
+                }
+                sameClass[j].classList.add("highlight");
+            }
+        }
+    }
+    document.body.onclick = (e) => {
+        if (e.target == document.body) {
+            var highlighted = document.getElementsByClassName("highlight");
+            while (highlighted.length > 0) {
+                highlighted[0].classList.remove("highlight");
+            }
+        }
+    }
+</script>

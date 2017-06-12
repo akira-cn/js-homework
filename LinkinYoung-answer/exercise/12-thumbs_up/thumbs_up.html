@@ -1,0 +1,54 @@
+<style>
+  #list a {
+    text-decoration:none; 
+  }
+  .thumbs_up:after {
+    content: '[点赞]';
+    margin-right: 10px; 
+  }
+  .clicked:after {
+    content: '[已赞]';
+    margin-right: 10px;
+    color: red; 
+  }
+</style>
+<ul id="list">
+  <li><a href="###" class="thumbs_up" id="t1"></a>主题1</li>
+  <li><a href="###" class="thumbs_up" id="t2"></a>主题2</li>
+  <li><a href="###" class="thumbs_up" id="t3"></a>主题3</li>
+  <li><a href="###" class="thumbs_up" id="t4"></a>主题4</li>
+  <li><a href="###" class="thumbs_up" id="t5"></a>主题5</li>
+  <li><a href="###" class="thumbs_up" id="t6"></a>主题6</li>
+  <li><a href="###" class="thumbs_up" id="t7"></a>主题7</li>
+  <li><a href="###" class="thumbs_up" id="t8"></a>主题8</li>
+  <li><a href="###" class="thumbs_up" id="t9" ></a>主题9</li>
+</ul>
+
+<script>
+    if (localStorage.clicked == undefined) {
+        localStorage.clicked = "[]";
+    } else {
+        var clickedList = localStorage.clicked;
+        clickedList = JSON.parse(clickedList);
+        for (var i in clickedList) {
+            var link = document.getElementById(clickedList[i]);
+            link.classList.remove("thumbs_up");
+            link.classList.add("clicked");
+            link.disabled = true;
+        }
+    }
+    var thumbs = document.getElementsByClassName("thumbs_up");
+    for (var i = 0; i < thumbs.length; i++) {
+        thumbs[i].onclick = (e) => {
+            var link = e.target;
+            link.classList.remove("thumbs_up");
+            link.classList.add("clicked");
+            link.disabled = true;
+            var clickedList = localStorage.clicked;
+            clickedList = JSON.parse(clickedList);
+            clickedList.push(link.id);
+            clickedList = JSON.stringify(clickedList);
+            localStorage.clicked = clickedList;
+        }
+    }
+</script>
