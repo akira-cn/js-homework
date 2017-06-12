@@ -1,0 +1,57 @@
+<style>
+  #list a {
+    text-decoration:none; 
+  }
+  .thumbs_up:after {
+    content: '[点赞]';
+    margin-right: 10px; 
+  }
+  .thumbs_uped:after{
+    content: '[已赞]';
+    margin-right: 10px;
+    color:red; 
+    font-style: italic;
+  }
+</style>
+<meta charset="utf-8">
+<ul id="list">
+  <li><a href="###" class="thumbs_up"></a>主题1</li>
+  <li><a href="###" class="thumbs_up"></a>主题2</li>
+  <li><a href="###" class="thumbs_up"></a>主题3</li>
+  <li><a href="###" class="thumbs_up"></a>主题4</li>
+  <li><a href="###" class="thumbs_up"></a>主题5</li>
+  <li><a href="###" class="thumbs_up"></a>主题6</li>
+  <li><a href="###" class="thumbs_up"></a>主题7</li>
+  <li><a href="###" class="thumbs_up"></a>主题8</li>
+  <li><a href="###" class="thumbs_up"></a>主题9</li>
+</ul>
+<script>
+
+  var lis = document.getElementsByTagName('a');
+  var len = lis.length;
+  var ups = [];
+  var storeups = JSON.parse(localStorage.getItem("ups"));
+  //init ups
+  var k=0;
+  for(k in storeups){
+    lis[storeups[k]].className="thumbs_uped";
+  }
+
+
+
+  for(var i=0;i<len;i++){
+    lis[i].onclick=function(){
+      var style=window.getComputedStyle(this,'::after').content;//获取before伪元素的content
+      this.className="thumbs_uped";
+      ups=[];
+      for(var j=0;j<len;j++){
+          var style_aft=window.getComputedStyle(lis[j],'::after').content;
+          if(style_aft==="\"[已赞]\""){
+              ups.push(j);
+          }
+        }
+        localStorage.setItem("ups",JSON.stringify(ups));
+     }
+  }
+
+</script>

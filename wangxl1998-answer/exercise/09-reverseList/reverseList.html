@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>reverseList</title>
+  </head>
+  <body>
+    <ul>
+      <li>apple</li>
+      <li>orange</li>
+      <li>grapes</li>
+      <li>lemon</li>
+    </ul>
+    <script type="text/javascript">
+      function reverseList(el){
+        var len = el.length;
+        for(var i=0;i<len/2;i++){
+          var element = el[i].innerHTML;
+          el[i].innerHTML = el[len-i-1].innerHTML;
+          el[len-i-1].innerHTML = element;
+        }
+      }
+      var a = document.getElementsByTagName("li");
+      reverseList(a);
+    </script>
+  </body>
+</html>
