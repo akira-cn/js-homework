@@ -1,0 +1,46 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title>sortoptions</title>
+</head>
+<body>
+    <select id="selector">
+        <option>American</option>
+        <option>England</option>
+        <option>Germany</option>
+        <option>France</option>
+        <option>Spain</option>
+        <option>Japan</option>
+        <option>Korea</option>
+        <option>China</option>
+    </select>
+    <button onclick="ascendingSort()">A-Z</button><!--升序排列-->
+    <button onclick="descendingSort()">Z-A</button><!--降序排列-->
+    <script>
+        function ascendingSort() {
+            var x = document.getElementById("selector").options;
+            var y = new Array();
+            for (let i = 0; i < x.length; i++)
+                y[i] = x[i].text;
+            y.sort(function (a, b) {
+                return a.toString().localeCompare(b);
+            });
+            for (let i = 0; i < x.length; i++)
+                x[i].text = y[i];
+        }
+        function descendingSort() {
+            var x = document.getElementById("selector").options;
+            var y = new Array();
+            for (let i = 0; i < x.length; i++)
+                y[i] = x[i].text;
+            y.sort(function (a, b) {
+                return b.toString().localeCompare(a);
+            });
+            for (let i = 0; i < x.length; i++)
+                x[i].text = y[i];
+        }
+    </script>
+</body>
+</html>
