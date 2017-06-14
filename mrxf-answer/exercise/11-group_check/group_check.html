@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        html, body{
+            width: 100%;
+            height: 100%;
+        }
+        #list {
+            margin: 0;
+            padding: 0;
+            width: 300px;    
+        }
+        #list li {
+            list-style-type:none;
+        }
+        #list a {
+            display: block;
+            text-decoration: none;
+        }
+        #list a:hover {
+            background-color: rgba(0, 0, 0, 0.2);  
+        }
+        #list li.error a{
+            color: red;
+        }
+        #list li.warning a{
+            color: orange;
+        }
+        #list li.info a{
+            color: green;
+        }
+        #list li.revert a{
+            color: white;
+            background: black;
+        }
+    </style>
+</head>
+<body>
+    <ul id="list">
+        <li class="error"><a href="###">错误信息：error...</a></li>
+        <li class="warning"><a href="###">警告信息：error...</a></li>
+        <li class="info"><a href="###">提示信息：error...</a></li>
+        <li class="warning"><a href="###">警告信息：error...</a></li>
+        <li class="warning"><a href="###">警告信息：error...</a></li>
+        <li class="error"><a href="###">错误信息：error...</a></li>
+        <li class="error"><a href="###">错误信息：error...</a></li>
+        <li class="info"><a href="###">提示信息：error...</a></li>
+        <li class="error"><a href="###">错误信息：error...</a></li>
+    </ul>
+
+    <script>
+        const aList = document.querySelectorAll("#list li");
+
+        // 遍历元素添加点击事件，更新效果
+        Array.prototype.forEach.call(aList, (item, index) => {
+            item.addEventListener('click', (e) => {
+
+                // 取消所有的反转样式
+                item.classList.contains('revert') && item.classList.remove('revert');
+                let classType = item.attributes.class.nodeValue;
+
+                // 遍历获取具有相同样式的元素
+                Array.prototype.forEach.call(aList, item => {
+                    item.classList.contains('revert') && item.classList.remove('revert');
+                    if(item.classList.contains(classType)){
+                        item.classList.add('revert');
+                    }
+                })
+            }, false)
+        })
+
+        // 增加取消效果事件
+        document.querySelector("body").addEventListener("click", (e) => {
+            console.log(e);
+            Array.prototype.forEach.call(aList, (item, index) => {
+                item.classList.contains('revert') && item.classList.remove('revert');
+            })
+        }, true)
+    </script>
+</body>
+</html>

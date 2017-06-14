@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+
+    <style>
+        #list a {
+            text-decoration:none; 
+        }
+        .thumbs_up:after {
+            content: '[点赞]';
+            margin-right: 10px; 
+        }
+        .thumbed:after {
+            content: '[已赞]';
+            margin-right: 10px;
+            color: red;
+        }
+    </style>
+</head>
+<body>
+    
+    <ul id="list">
+        <li><a href="###" class="thumbs_up"></a>主题1</li>
+        <li><a href="###" class="thumbs_up"></a>主题2</li>
+        <li><a href="###" class="thumbs_up"></a>主题3</li>
+        <li><a href="###" class="thumbs_up"></a>主题4</li>
+        <li><a href="###" class="thumbs_up"></a>主题5</li>
+        <li><a href="###" class="thumbs_up"></a>主题6</li>
+        <li><a href="###" class="thumbs_up"></a>主题7</li>
+        <li><a href="###" class="thumbs_up"></a>主题8</li>
+        <li><a href="###" class="thumbs_up"></a>主题9</li>
+    </ul>
+
+    <script>
+        const aList = document.querySelectorAll("#list li a");
+        const aThumbed = JSON.parse(localStorage.getItem("thumbed")) || [];
+
+        /**
+        * 遍历元素，修改样式以及内容
+        * 如果已经被赞过，那么直接修改为已赞样式
+        * 如果没有被赞过，添加点击事件
+        */
+        Array.prototype.forEach.call(aList, (item, index) => {
+            if(aThumbed.includes(index)){
+                item.classList.remove("thumbs_up");
+                item.classList.add("thumbed");
+            }else{
+                item.addEventListener("click", (e) => {
+                    item.classList.remove("thumbs_up");
+                    item.classList.add("thumbed");
+                    aThumbed.push(index);
+                    localStorage.setItem("thumbed",JSON.stringify(aThumbed));
+                })
+            }
+        })
+    </script>
+
+</body>
+</html>
