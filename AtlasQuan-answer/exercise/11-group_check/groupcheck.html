@@ -1,0 +1,82 @@
+<style>
+  #list {
+    margin: 0;
+    padding: 0;    
+  }
+  #list li {
+    list-style-type:none;
+  }
+  #list a {
+    display: block;
+    text-decoration: none;
+  }
+  #list a:hover {
+    background-color: rgba(0, 0, 0, 0.2);  
+  }
+  #list li.error a{
+    color: red;
+  }
+  #list li.warning a{
+    color: orange;
+  }
+  #list li.info a{
+    color: green;
+  }
+  #list li.highlight a{
+    color: white;
+    background: black;
+  }
+</style>
+<meta charset="utf-8">
+<ul id="list">
+  <li onclick="console.log('123')" class="error"><a href="###">错误信息：error...</a></li>
+  <li class="warning"><a href="###">警告信息：error...</a></li>
+  <li class="info"><a href="###">提示信息：error...</a></li>
+  <li class="warning"><a href="###">警告信息：error...</a></li>
+  <li class="warning"><a href="###">警告信息：error...</a></li>
+  <li class="error"><a href="###">错误信息：error...</a></li>
+  <li class="error"><a href="###">错误信息：error...</a></li>
+  <li class="info"><a href="###">提示信息：error...</a></li>
+  <li class="error"><a href="###">错误信息：error...</a></li>
+</ul>
+<script>
+
+var lis = document.getElementsByTagName('li');
+var len = lis.length;
+for(var i=0;i<len;i++){
+   lis[i].onclick=function(){
+    var clickedclass = this.className;
+    for(var j=0;j<len;j++){
+      if(lis[j].className===clickedclass){
+         lis[j].className+=' highlight';
+      }else{
+         var obj_class_lst = lis[j].className.split(/\s+/);//通过split空字符将lis转换成数组.
+         var x=0;
+         for(x in obj_class_lst){
+            if(obj_class_lst[x]==='highlight'){
+              lis[j].className = obj_class_lst[0];
+            }
+         }
+        
+      }
+    }
+  }
+}
+document.getElementsByTagName('body')[0].onclick=function(e){
+    var clktarget = e.target.tagName;
+    if(clktarget=="BODY"){
+      for(var i=0;i<len;i++){
+        for(var j=0;j<len;j++){
+             var obj_class_lst = lis[j].className.split(/\s+/);//通过split空字符将lis转换成数组.
+             var x=0;
+             for(x in obj_class_lst){
+                if(obj_class_lst[x]==='highlight'){
+                  lis[j].className = obj_class_lst[0];
+                }
+             }
+        }
+      }
+    }
+}
+
+</script>

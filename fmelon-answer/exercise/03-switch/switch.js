@@ -1,5 +1,4 @@
 let num = prompt("请输入字符串", "");
-
 switch (parseInt(num) == num) {
     case false:
         alert("不是整数");

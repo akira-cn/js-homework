@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>10.sortoptions</title>
+</head>
+<body>
+	<select id = "id1">
+  		<option>American</option>
+  		<option>England</option>
+  		<option>Germany</option>
+  		<option>France</option>
+  		<option>Spain</option>
+  		<option>Japan<option>
+  		<option>Korea</option>
+  		<option>China</option>
+	</select>
+
+	<input type="button" name="A-Z" value="A-Z" onclick="javascript:shengxu();"><!--升序排列-->
+	<input type="button" name="Z-A" value="Z-A" onclick="javascript:jiangxu();"><!--降序排列-->
+
+	<script type="text/javascript">
+		var lb=document.getElementById('id1').getElementsByTagName('option');//查找到子元素
+		var s=[];//创建数组
+		var temp;
+		for (var i=0, j=lb.length; i<j; i++){
+ 			var li=lb[i];
+ 			s.push(li);//把元素放入数组
+		}
+		function shengxu()
+		{
+			for(var i = 0; i<s.length; i++){
+				for(var j = 0; j<s.length; j++){
+					if (s[j]>s[j+1]) {
+						temp = s[j];
+						s[j] = s[j+1];
+						s[j+1] = temp;
+					}
+				}
+			}
+			for(i=0, j=s.length; i<j; i++){
+				s[i].parentNode.appendChild(s[i]);//重新给列表赋值输出
+			}
+		}
+	</script>
+
+</body>
+</html>

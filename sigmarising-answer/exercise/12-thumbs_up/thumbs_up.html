@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>点赞</title>
+        <meta charset="UTF-8">
+    </head>
+    <body id="main">
+        <style>
+            #list a {
+                text-decoration:none; 
+            }
+            .thumbs_up:after {
+                content: '[点赞]';
+                margin-right: 10px; 
+            }
+            .ok:after {
+                content: '[已赞]';
+                margin-right: 10px;
+                color: red;
+                font-style: italic;
+            }
+        </style>
+        <ul id="list">
+            <li><a href="###" class="thumbs_up"></a>主题1</li>
+            <li><a href="###" class="thumbs_up"></a>主题2</li>
+            <li><a href="###" class="thumbs_up"></a>主题3</li>
+            <li><a href="###" class="thumbs_up"></a>主题4</li>
+            <li><a href="###" class="thumbs_up"></a>主题5</li>
+            <li><a href="###" class="thumbs_up"></a>主题6</li>
+            <li><a href="###" class="thumbs_up"></a>主题7</li>
+            <li><a href="###" class="thumbs_up"></a>主题8</li>
+            <li><a href="###" class="thumbs_up"></a>主题9</li>
+        </ul>
+        <button>清除记忆</button>
+
+        <script type="text/javascript" src="handle.js">      
+        </script>
+    </body>
+</html>

@@ -1,0 +1,9 @@
+function reverse(str){
+    let rev = [];
+    for (let n = 0; n < str.length; n++){
+        rev[n] = str[str.length - n - 1];
+    }
+    return rev.join("");
+}
+
+console.log(reverse('string'));

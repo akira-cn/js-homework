@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>06-isPrime</title>
+<script type="text/javascript">
+function a()
+  {
+  var n=prompt("请输入要判断的数字",""); 
+    if (isPrime(n))
+      document.write("这个数是素数");
+    else
+      document.write("这个数不是素数");
+  }
+function isPrime(n){
+  if(n==1)
+    return true;
+  else if(n==2)
+    return true;
+  else if(n>2)
+    { 
+      var temp=true;
+      for(var i=2;i<n;i++){
+        if(!(n%i))
+          temp=false;
+      }
+      return temp;
+    }
+  else
+    return false;
+}
+
+</script>
+</head>
+<body>
+<input type="button" onclick="a()"
+value="点此判断素数" />
+</body>
+</html>

@@ -1,0 +1,21 @@
+function getSecond(arr){
+    let max = -Infinity;
+    let sec = -Infinity;
+    for (let n = 0;n < arr.length;n++){
+        if (arr[n] > max){
+            sec = max;
+            max = arr[n];
+        }
+        else{
+            if (arr[n] > sec){
+                sec = arr[n];
+            }
+        }
+    }
+    if (arr.length === 1)//如果数组长度为1
+        return max;
+    else 
+        return sec;
+}
+
+console.log(getSecond([5,1,3,7,6]));

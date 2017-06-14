@@ -1,0 +1,23 @@
+<<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+	<title>fibonacci</title>
+	<script type="text/javascript">
+		function fibonacci(n){
+			let a=1;
+			let b=1;
+			let c=0;
+			for( ;(n-2)>0;n--){
+				c=a+b;
+				a=b;
+				b=c;
+			}
+			return c;
+		}
+	</script>
+</head>
+<body>
+
+</body>
+</html>
