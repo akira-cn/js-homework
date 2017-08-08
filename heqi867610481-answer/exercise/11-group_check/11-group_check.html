@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<style>
+  #list {
+    margin: 0;
+    padding: 0;    
+  }
+  #list li {
+    list-style-type:none;
+  }
+  #list a {
+    display: block;
+    text-decoration: none;
+  }
+  #list a:hover {
+    background-color: rgba(0, 0, 0, 0.2);  
+  }
+  .highlight {
+    color:white !important;
+    background-color: black;
+  }
+  #list li.error a{
+    color: red;
+  }
+  #list li.warning a{
+    color: orange;
+  }
+  #list li.info a{
+    color: green;
+  }
+</style>
+</head>
+<body>
+<ul id="list">
+  <li class="error" onclick="errorchange()"><a>错误信息：error...</a></li>
+  <li class="warning" onclick="warningchange()"><a>警告信息：error...</a></li>
+  <li class="info" onclick="infochange()"><a >提示信息：error...</a></li>
+  <li class="warning" onclick="warningchange()"><a >警告信息：error...</a></li>
+  <li class="warning" onclick="warningchange()"><a >警告信息：error...</a></li>
+  <li class="error" onclick="errorchange()"><a >错误信息：error...</a></li>
+  <li class="error" onclick="errorchange()"><a >错误信息：error...</a></li>
+  <li class="info" onclick="infochange()"><a >提示信息：error...</a></li>
+  <li class="error" onclick="errorchange()"><a >错误信息：error...</a></li>
+</ul>
+<script src="http://apps.bdimg.com/libs/jquery/2.1.1/jquery.min.js"></script>
+<script type="text/javascript">
+function warningchange(){
+  $('#list li.warning').html("<a  class=\"highlight\">警告信息：error...</a>");
+  $('#list li.error').html("<a >错误信息：error...</a>");
+  $('#list li.info').html("<a>提示信息：error...</a>");
+}
+function errorchange(){
+  $('#list li.warning').html("<a>警告信息：error...</a>");
+  $('#list li.error').html("<a class=\"highlight\">错误信息：error...</a>");
+  $('#list li.info').html("<a >提示信息：error...</a>");
+}
+function infochange(){
+  $('#list li.warning').html("<a>警告信息：error...</a>");
+  $('#list li.error').html("<a >错误信息：error...</a>");
+  $('#list li.info').html("<a class=\"highlight\">提示信息：error...</a>");
+}
+</script>
+</body>
+</html>
